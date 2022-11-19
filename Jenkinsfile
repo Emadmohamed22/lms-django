@@ -6,14 +6,14 @@ pipeline{
     stages{
         stage("install dependencies"){
             steps{
-                sh'pip install - r requirements.txt'
+                sh'sudo pip3 install - r requirements.txt'
                 echo "installation done"
             }
         }
        stage("migrate"){
             steps{
-                sh'python manage.py makemigrations'
-                sh'python manage.py migrate'
+                sh'sudo python3 manage.py makemigrations'
+                sh'sudo python3 manage.py migrate'
                 echo "migration done"
             }
         }
